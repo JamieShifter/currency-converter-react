@@ -11,31 +11,18 @@ const Form = (props) => {
     <Container
       currencies={currencies}
       title="From Currency"
+      input={true}
     />
     <p>
       <label className="form__labelText form__labelText--reverse">Reverse:</label>
       <input className="form__button" type="button" value="♺"/>
     </p>
     <div className="form__container">
-    <p>
-      <label className="form__label">
-        <span className="form__labelText">Convert To:</span>
-        <select className="form__field" name="to">
-          <option value="eur">EUR</option>
-          <option value="pln">PLN</option>
-          <option value="usd">USD</option>
-          <option value="gbp">GBP</option>
-          <option value="czk">CZK</option>
-          <option value="rub">RUB</option>
-          <option value="jpy">JPY</option>
-          <option value="btc">BTC</option>
-        </select>
-      </label>
-      <label className="form__label">
-        <span className="form__labelText">Result Amount:</span>
-        <span className="form__labelText form__labelText--result"></span>
-      </label>
-    </p>
+    <Container
+      currencies={currencies}
+      title="Convert To"
+      input={false}
+      />
     </div>
   </fieldset>
 </form>)

@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import Select from 'react-select';
+import React from 'react';
 
-const Container = ({ currencies, title }) => {
+const Container = ({ currencies, title, input }) => {
 
     const options = currencies.map(currency => (
         { value: currency, label: currency.toUpperCase() }
@@ -19,9 +18,13 @@ const Container = ({ currencies, title }) => {
                     </select>
                 </label>
                 <label className="form__label">
-                    <span className="form__labelText">Amount:</span>
+                    <span className="form__labelText">{!input ? "Result " : ""}Amount:</span>
+                    {
+                    input ? 
                     <input className="form__field" required type="number" name="fromAmount" step="0.01"
-                        min="0.01" />
+                        min="0.01" /> :
+                        <span className="form__labelText form__labelText--result"></span>
+                        }
                 </label>
             </p>
         </div>
