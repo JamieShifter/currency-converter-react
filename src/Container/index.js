@@ -20,11 +20,11 @@ const Container = ({ currencies, title, input }) => {
                 <label className="form__label">
                     <span className="form__labelText">{!input ? "Result " : ""}Amount:</span>
                     {
-                    input ? 
-                    <input className="form__field" required type="number" name="fromAmount" step="0.01"
-                        min="0.01" /> :
-                        <span className="form__labelText form__labelText--result"></span>
-                        }
+                        input ?
+                            <input className="form__field" required type="number" name="fromAmount" step="0.01"
+                                min="0.01" /> :
+                            <span className="form__labelText form__labelText--result"></span>
+                    }
                 </label>
             </p>
         </div>
