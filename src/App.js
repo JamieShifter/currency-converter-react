@@ -3,7 +3,6 @@ import Form from "./Form";
 import Container from "./Container";
 import Button from "./Button";
 import Header from "./Header";
-import { useState } from "react";
 import "./index.css";
 
 
@@ -27,14 +26,6 @@ function App() {
     // calculate(inputCurrency, outputCurrency, fromAmount, toAmount, plnSeed);
   };
 
-  const calculate = (inputCurrency, outputCurrency, fromAmount, toAmount, seed) => {
-    // resultAmount = (outputCurrency.value === "btc") ?
-    //   (fromAmount.value * (seed[outputCurrency.value] / seed[inputCurrency.value]))
-    //   :
-    //   (fromAmount.value * (seed[outputCurrency.value] / seed[inputCurrency.value])).toFixed(2);
-    // toAmount.innerText = resultAmount + " " + outputCurrency.value.toUpperCase();
-  };
-
   return (
     <div>
       <Header version={1.2} />
@@ -46,7 +37,7 @@ function App() {
                 currencies={currencies}
                 title="From Currency"
                 input={true}
-                calculate={calculate}
+                // calculate={calculate}
               />
               <Button />
               <Container
