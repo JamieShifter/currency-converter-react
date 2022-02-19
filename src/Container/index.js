@@ -1,4 +1,3 @@
-import { calculateNewValue } from '@testing-library/user-event/dist/utils';
 import React, { useState } from 'react';
 
 const Container = ({ currencies, title, input }) => {
@@ -18,7 +17,8 @@ const Container = ({ currencies, title, input }) => {
     const onAmountChange = ({ target }) => {
         let new_value = calculate(inputCurrency, outputCurrency, target.value);
         setAmount(target.value);
-        setResult(new_value); /// NEED TO FIGURE OUT HOW TO PASS THIS TO RESULT
+        setResult(new_value);  // NEED TO FIGURE OUT HOW TO PASS THIS TO RESULT
+        console.log(result);
         console.log(new_value);
     };
 
@@ -56,7 +56,7 @@ const Container = ({ currencies, title, input }) => {
                             value={amount}
                             onChange={onAmountChange} />
                         :
-                        <span className="form__labelText form__labelText--result">{result}</span>
+                        <span className="form__labelText form__labelText--result">{result}</span> // CAN'T GET THIS TO WORK
                     }
                 </label>
             </p>
