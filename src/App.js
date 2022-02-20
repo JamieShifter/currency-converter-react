@@ -31,26 +31,34 @@ function App() {
     let inputIndex = currencies.findIndex(x => x.display === inputCurrency);
     let outputIndex = currencies.findIndex(x => x.display === outputCurrency);
     let resultAmount = amount * (currencies[outputIndex].pln_ratio / currencies[inputIndex].pln_ratio);
-    return (resultAmount);
+    return resultAmount;
+  };
+
+  const renderResult = (inputCurrency, outputCurrency, amount) => {
+    let resultAmount = calculate(inputCurrency, outputCurrency, amount);
+    let resultFixed = (outputCurrency !== "btc" ? resultAmount.toFixed(2).toString() : resultAmount.toString());
+    let rendered = resultFixed + " " + outputCurrency.toUpperCase();
+    return rendered;
+    
   };
 
   const [result, setResult] = useState(0);
   const [amount, setAmount] = useState(0);
   const onAmountChange = ({ target }) => {
     setAmount(target.value);
-    setResult(calculate(inputCurrency, outputCurrency, target.value));
+    setResult(renderResult(inputCurrency, outputCurrency, target.value));
   };
 
   const [inputCurrency, setInputCurrency] = useState("pln");
   const onSelectInputChange = ({ target }) => {
     setInputCurrency(target.value);
-    setResult(calculate(target.value , outputCurrency, amount));
+    setResult(renderResult(target.value , outputCurrency, amount));
   }
 
   const [outputCurrency, setOutputCurrency] = useState("eur");
   const onSelectOutputChange = ({ target }) => {
     setOutputCurrency(target.value);
-    setResult(calculate(inputCurrency , target.value, amount));
+    setResult(renderResult(inputCurrency , target.value, amount));
   }
 
   return (
