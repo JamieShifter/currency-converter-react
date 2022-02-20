@@ -21,10 +21,10 @@ function App() {
   ];
 
   const reverseCurrency = () => {
-    // let reversedFromCurrency = outputCurrency.value;
-    // outputCurrency.value = inputCurrency.value;
-    // inputCurrency.value = reversedFromCurrency;
-    // calculate(inputCurrency, outputCurrency, fromAmount, toAmount, plnSeed);
+    setResult(renderResult(outputCurrency, inputCurrency, amount));
+    let reversedFromCurrency = outputCurrency;
+    setOutputCurrency(inputCurrency);
+    setInputCurrency(reversedFromCurrency);
   };
 
   const calculate = (inputCurrency, outputCurrency, amount) => {
@@ -80,7 +80,9 @@ function App() {
                 outputCurrency={outputCurrency}
                 onSelectOutputChange={onSelectOutputChange}
               />
-              <Button />
+              <Button
+                reverseCurrency={reverseCurrency}
+              />
               <Container
                 currencies={currencies}
                 title="Convert To"
