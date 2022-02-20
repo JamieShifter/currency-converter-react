@@ -1,33 +1,6 @@
 import React, { useState } from 'react';
 
-const Container = ({ currencies, title, input }) => {
-
-    const calculate = (inputCurrency, outputCurrency, amount) => {
-        let inputIndex = currencies.findIndex(x => x.display === inputCurrency);
-        let outputIndex = currencies.findIndex(x => x.display === outputCurrency);
-        let resultAmount = amount * (currencies[outputIndex].pln_ratio / currencies[inputIndex].pln_ratio);
-        return(resultAmount);
-    };
-
-    
-
-    const [result, setResult] = useState(0);
-
-    const [amount, setAmount] = useState(0);
-    const onAmountChange = ({ target }) => {
-        let new_value = calculate(inputCurrency, outputCurrency, target.value);
-        setAmount(target.value);
-        setResult(new_value);  // NEED TO FIGURE OUT HOW TO PASS THIS TO RESULT
-        console.log(result);
-        console.log(new_value);
-    };
-
-    const [inputCurrency, setInputCurrency] = useState("pln");
-    const onSelectInputChange = ({ target }) => setInputCurrency(target.value);
-
-    const [outputCurrency, setOutputCurrency] = useState("eur");
-    const onSelectOutputChange = ({ target }) => setOutputCurrency(target.value);
-    
+const Container = ({ currencies, title, input, amount, onAmountChange, result, inputCurrency, onSelectInputChange, outputCurrency, onSelectOutputChange }) => {
 
     return (
         <div className="form__container">

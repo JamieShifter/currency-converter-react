@@ -4,6 +4,7 @@ import Container from "./Container";
 import Button from "./Button";
 import Header from "./Header";
 import "./index.css";
+import { useState } from "react";
 
 
 function App() {
@@ -26,6 +27,32 @@ function App() {
     // calculate(inputCurrency, outputCurrency, fromAmount, toAmount, plnSeed);
   };
 
+  const calculate = (inputCurrency, outputCurrency, amount) => {
+    let inputIndex = currencies.findIndex(x => x.display === inputCurrency);
+    let outputIndex = currencies.findIndex(x => x.display === outputCurrency);
+    let resultAmount = amount * (currencies[outputIndex].pln_ratio / currencies[inputIndex].pln_ratio);
+    return (resultAmount);
+  };
+
+  const [result, setResult] = useState(0);
+  const [amount, setAmount] = useState(0);
+  const onAmountChange = ({ target }) => {
+    setAmount(target.value);
+    setResult(calculate(inputCurrency, outputCurrency, target.value));
+  };
+
+  const [inputCurrency, setInputCurrency] = useState("pln");
+  const onSelectInputChange = ({ target }) => {
+    setInputCurrency(target.value);
+    setResult(calculate(target.value , outputCurrency, amount));
+  }
+
+  const [outputCurrency, setOutputCurrency] = useState("eur");
+  const onSelectOutputChange = ({ target }) => {
+    setOutputCurrency(target.value);
+    setResult(calculate(inputCurrency , target.value, amount));
+  }
+
   return (
     <div>
       <Header version={1.2} />
@@ -37,13 +64,26 @@ function App() {
                 currencies={currencies}
                 title="From Currency"
                 input={true}
-                // calculate={calculate}
+                amount={amount}
+                onAmountChange={onAmountChange}
+                result={result}
+                inputCurrency={inputCurrency}
+                onSelectInputChange={onSelectInputChange}
+                outputCurrency={outputCurrency}
+                onSelectOutputChange={onSelectOutputChange}
               />
               <Button />
               <Container
                 currencies={currencies}
                 title="Convert To"
                 input={false}
+                amount={amount}
+                onAmountChange={onAmountChange}
+                result={result}
+                inputCurrency={inputCurrency}
+                onSelectInputChange={onSelectInputChange}
+                outputCurrency={outputCurrency}
+                onSelectOutputChange={onSelectOutputChange}
               />
             </>
           } />
