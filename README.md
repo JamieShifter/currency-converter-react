@@ -14,7 +14,7 @@ Then you just need to write the amount of money to want to convert in the first 
 That's it! The calculation should be done automatically without you having to click anything else
 
 Here's how it looks:
-![CC-demo](/images/demo.gif "CC-demo")
+![CC-demo](../src/images/demo.gif "CC-demo")
 
 ## "Reverse" button
 
