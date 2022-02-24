@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import "./style.css";
 
 const Container = ({ currencies, title, input, amount, onAmountChange, result, inputCurrency, onSelectInputChange, outputCurrency, onSelectOutputChange }) => {
 
     return (
         <div className="form__container">
-            <p>
                 <label className="form__label">
                     <span className="form__labelText">{title}:</span>
                     <select
@@ -29,10 +28,9 @@ const Container = ({ currencies, title, input, amount, onAmountChange, result, i
                             value={amount}
                             onChange={onAmountChange} />
                         :
-                        <span className="form__labelText form__labelText--result">{result}</span> // CAN'T GET THIS TO WORK
+                        <span className="form__labelText form__labelText--result">{result}</span>
                     }
                 </label>
-            </p>
         </div>
     );
 };

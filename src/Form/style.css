@@ -10,7 +10,7 @@
 }
 
 .form__labelText--reverse {
-    margin: 15px;
+    margin: 10px 20px 10px 10px;
 }
 
 .form__labelText--result {
@@ -30,6 +30,12 @@
     vertical-align: top;
 }
 
+@media (max-width: 767px) {
+    .form__field {
+        max-width: none;
+    }
+}
+
 .form__field:required {
     border: 1px solid rgb(141, 0, 0);
 }
@@ -40,7 +46,17 @@
 }
 
 .form__label {
-    margin: 15px;
+    display: flex;
+    align-items: center;
+    min-width: 230px;
+    margin: 10px 50px 10px 10px;
+}
+
+@media (max-width: 767px) {
+    .form__label {
+        display: flex;
+        flex-basis: 60px;
+    }
 }
 
 .form__fieldset {
