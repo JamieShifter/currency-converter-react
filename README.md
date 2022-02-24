@@ -13,6 +13,9 @@ Then you just need to write the amount of money to want to convert in the first 
 
 That's it! The calculation should be done automatically without you having to click anything else
 
+Here's how it looks:
+![CC-demo](/images/demo.gif "CC-demo")
+
 ## "Reverse" button
 
 You can click the "Reverse" button to switch the currencies backwards:
