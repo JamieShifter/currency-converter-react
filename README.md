@@ -2,7 +2,7 @@
 
 This little website lets you convert between various currencies. For now I limited the number of available currencies to **8** and guess what - Bitcoin is one of them!
 
-Here's the link: [CC1.2](https://jamieshifter.github.io/currency-coverter-react/)
+Here's the link: [CC1.2](https://jamieshifter.github.io/currency-converter-react/)
 
 ## How to use it?
 
