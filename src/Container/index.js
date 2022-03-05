@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Container = ({ currencies, title, input, amount, onAmountChange, result, inputCurrency, onSelectInputChange, outputCurrency, onSelectOutputChange }) => {
+const Container = ({ currencies, title, input, amount, onAmountChange, result, inputCurrency, onInputCurrencyChange, outputCurrency, onOutputCurrencyChange }) => {
 
     const preventKeyPressNegative = (e) => {
         if (e.code === 'Minus') {
@@ -24,7 +24,7 @@ const Container = ({ currencies, title, input, amount, onAmountChange, result, i
                     <span className="form__labelText">{title}:</span>
                     <select
                         value={input ? inputCurrency : outputCurrency}
-                        onChange={input ? onSelectInputChange : onSelectOutputChange}
+                        onChange={input ? onInputCurrencyChange : onOutputCurrencyChange}
                         className="form__field"
                         name="from">
                         {currencies.map(currency => (

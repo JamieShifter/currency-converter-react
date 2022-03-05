@@ -50,13 +50,13 @@ function App() {
   };
 
   const [inputCurrency, setInputCurrency] = useState("pln");
-  const onSelectInputChange = ({ target }) => {
+  const onInputCurrencyChange = ({ target }) => {
     setInputCurrency(target.value);
     setResult(renderResult(target.value , outputCurrency, amount));
   }
 
   const [outputCurrency, setOutputCurrency] = useState("eur");
-  const onSelectOutputChange = ({ target }) => {
+  const onOutputCurrencyChange = ({ target }) => {
     setOutputCurrency(target.value);
     setResult(renderResult(inputCurrency , target.value, amount));
   }
@@ -76,9 +76,9 @@ function App() {
                 onAmountChange={onAmountChange}
                 result={result}
                 inputCurrency={inputCurrency}
-                onSelectInputChange={onSelectInputChange}
+                onSelectInputChange={onInputCurrencyChange}
                 outputCurrency={outputCurrency}
-                onSelectOutputChange={onSelectOutputChange}
+                onSelectOutputChange={onOutputCurrencyChange}
               />
               <Button
                 reverseCurrency={reverseCurrency}
@@ -91,9 +91,9 @@ function App() {
                 onAmountChange={onAmountChange}
                 result={result}
                 inputCurrency={inputCurrency}
-                onSelectInputChange={onSelectInputChange}
+                onSelectInputChange={onInputCurrencyChange}
                 outputCurrency={outputCurrency}
-                onSelectOutputChange={onSelectOutputChange}
+                onSelectOutputChange={onOutputCurrencyChange}
               />
             </>
           } />
