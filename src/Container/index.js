@@ -2,6 +2,22 @@ import "./style.css";
 
 const Container = ({ currencies, title, input, amount, onAmountChange, result, inputCurrency, onSelectInputChange, outputCurrency, onSelectOutputChange }) => {
 
+    const preventKeyPressNegative = (e) => {
+        if (e.code === 'Minus') {
+            e.preventDefault();
+        }
+    };
+
+    const preventPasteNegative = (e) => {
+        const clipboardData = e.clipboardData || window.clipboardData;
+        const pastedData = parseFloat(clipboardData.getData('text'));
+    
+        if (pastedData < 0) {
+            e.preventDefault();
+        }
+    };
+    
+
     return (
         <div className="form__container">
                 <label className="form__label">
@@ -24,7 +40,9 @@ const Container = ({ currencies, title, input, amount, onAmountChange, result, i
                             required type="number"
                             name="fromAmount"
                             step="0.01"
-                            min="0.01"
+                            min="0"
+                            onPaste={preventPasteNegative}
+                            onKeyPress={preventKeyPressNegative}
                             value={amount}
                             onChange={onAmountChange} />
                         :
