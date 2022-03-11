@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Container = ({ currencies, title, input, amount, onAmountChange, result, inputCurrency, onInputCurrencyChange, outputCurrency, onOutputCurrencyChange }) => {
+const Container = ({ currencies, title, input, amount, onAmountChange, result, inputCurrency, onInputCurrencyChange, outputCurrency, onOutputCurrencyChange, onResultChange }) => {
 
     const preventKeyPressNegative = (e) => {
         if (e.code === 'Minus') {

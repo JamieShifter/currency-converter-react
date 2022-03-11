@@ -41,6 +41,8 @@ function App() {
     
   };
 
+  const onResultChange = () => {};
+
   const [result, setResult] = useState(0);
   const [amount, setAmount] = useState(0);
   const onAmountChange = ({ target }) => {
@@ -74,6 +76,7 @@ function App() {
                 amount={amount}
                 onAmountChange={onAmountChange}
                 result={result}
+                onResultChange={onResultChange}
                 inputCurrency={inputCurrency}
                 onInputCurrencyChange={onInputCurrencyChange}
                 outputCurrency={outputCurrency}
