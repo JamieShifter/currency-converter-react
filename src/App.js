@@ -2,7 +2,6 @@ import Form from "./Form";
 import Container from "./Container";
 import Button from "./Button";
 import Header from "./Header";
-import Datetime from "./Datetime";
 import "./index.css";
 import { useState } from "react";
 
@@ -68,7 +67,6 @@ function App() {
         <Form
           body={
             <>
-              <Datetime/>
               <Container
                 currencies={currencies}
                 title="From Currency"

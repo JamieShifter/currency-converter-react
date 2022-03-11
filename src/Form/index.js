@@ -1,11 +1,12 @@
 import "./style.css";
+import Datetime from "../Datetime/index.js"
 
 const Form = ({ body }) => {
 
   return (
     <form className="form">
       <fieldset className="form__fieldset">
-        <legend className="form__legend">Convert</legend>
+      <Datetime/>
         {body}
       </fieldset>
     </form>)

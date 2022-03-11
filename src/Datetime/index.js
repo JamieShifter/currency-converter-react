@@ -1,13 +1,27 @@
 import "./style.css";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Datetime = () => {
 
-    const currentDate = new Date(); 
+    const [currentDate, setCurrentDate] = useState(new Date()); 
+    let day = currentDate.toLocaleDateString("pl-PL", {weekday: "long", day: "numeric", month: "long", });
+    let time = currentDate.toLocaleTimeString();
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentDate(new Date());
+            day = currentDate.toLocaleDateString("pl-PL", {weekday: "long", day: "numeric", month: "long", });
+            time = currentDate.toLocaleTimeString();
+        }, 1000);
+
+        return () => {
+            clearInterval(intervalId);
+        }
+    }, []);
 
     return (
         <div className="form__datetime">
-            Dzisiaj jest {currentDate.toLocaleString()}
+            Dzisiaj jest {day}, {time}
         </div>
     )
 
