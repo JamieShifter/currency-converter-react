@@ -1,8 +1,10 @@
-# Welcome to Currency Converter 1.2!
+# Welcome to Currency Converter 1.3!
 
 This little website lets you convert between various currencies. For now I limited the number of available currencies to **8** and guess what - Bitcoin is one of them!
 
-Here's the link: [CC1.2](https://jamieshifter.github.io/currency-converter-react/)
+There's also a little clock feature at the top-right corner, to reflect what time it is;)
+
+Here's the link: [CC1.3](https://jamieshifter.github.io/currency-converter-react/)
 
 ## How to use it?
 

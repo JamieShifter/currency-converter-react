@@ -62,7 +62,7 @@ function App() {
 
   return (
     <div>
-      <Header version={1.2} />
+      <Header version={1.3} />
       <main className="main">
         <Form
           body={
@@ -75,9 +75,9 @@ function App() {
                 onAmountChange={onAmountChange}
                 result={result}
                 inputCurrency={inputCurrency}
-                onSelectInputChange={onInputCurrencyChange}
+                onInputCurrencyChange={onInputCurrencyChange}
                 outputCurrency={outputCurrency}
-                onSelectOutputChange={onOutputCurrencyChange}
+                onOutputCurrencyChange={onOutputCurrencyChange}
               />
               <Button
                 reverseCurrency={reverseCurrency}
@@ -90,9 +90,9 @@ function App() {
                 onAmountChange={onAmountChange}
                 result={result}
                 inputCurrency={inputCurrency}
-                onSelectInputChange={onInputCurrencyChange}
+                onInputCurrencyChange={onInputCurrencyChange}
                 outputCurrency={outputCurrency}
-                onSelectOutputChange={onOutputCurrencyChange}
+                onOutputCurrencyChange={onOutputCurrencyChange}
               />
             </>
           } />
