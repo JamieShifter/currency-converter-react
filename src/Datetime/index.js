@@ -10,8 +10,6 @@ const Datetime = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentDate(new Date());
-            day = currentDate.toLocaleDateString("pl-PL", {weekday: "long", day: "numeric", month: "long", });
-            time = currentDate.toLocaleTimeString();
         }, 1000);
 
         return () => {
