@@ -1,4 +1,5 @@
 import "./style.css";
+import { StyledContainer } from "./styled";
 
 const Container = ({ currencies, title, input, amount, onAmountChange, result, inputCurrency, onInputCurrencyChange, outputCurrency, onOutputCurrencyChange, onResultChange }) => {
 
@@ -19,7 +20,7 @@ const Container = ({ currencies, title, input, amount, onAmountChange, result, i
     
 
     return (
-        <div className="form__container">
+        <StyledContainer>
                 <label className="form__label">
                     <span className="form__labelText">{title}:</span>
                     <select
@@ -49,7 +50,7 @@ const Container = ({ currencies, title, input, amount, onAmountChange, result, i
                         <span className="form__labelText form__labelText--result">{result}</span>
                     }
                 </label>
-        </div>
+        </StyledContainer>
     );
 };
 
