@@ -2,6 +2,7 @@ import Form from "./Form";
 import Container from "./Container";
 import Button from "./Button";
 import Header from "./Header";
+import { StyledMain } from "./styled";
 import "./index.css";
 import { useState } from "react";
 
@@ -38,10 +39,10 @@ function App() {
     let resultFixed = (outputCurrency !== "btc" ? resultAmount.toFixed(2).toString() : resultAmount.toString());
     let rendered = resultFixed + " " + outputCurrency.toUpperCase();
     return rendered;
-    
+
   };
 
-  const onResultChange = () => {};
+  const onResultChange = () => { };
 
   const [result, setResult] = useState(0);
   const [amount, setAmount] = useState(0);
@@ -53,19 +54,19 @@ function App() {
   const [inputCurrency, setInputCurrency] = useState("pln");
   const onInputCurrencyChange = ({ target }) => {
     setInputCurrency(target.value);
-    setResult(renderResult(target.value , outputCurrency, amount));
+    setResult(renderResult(target.value, outputCurrency, amount));
   }
 
   const [outputCurrency, setOutputCurrency] = useState("eur");
   const onOutputCurrencyChange = ({ target }) => {
     setOutputCurrency(target.value);
-    setResult(renderResult(inputCurrency , target.value, amount));
+    setResult(renderResult(inputCurrency, target.value, amount));
   }
 
   return (
     <div>
-      <Header version={1.3} />
-      <main className="main">
+      <Header version={1.4} />
+      <StyledMain>
         <Form
           body={
             <>
@@ -99,7 +100,7 @@ function App() {
               />
             </>
           } />
-      </main>
+      </StyledMain>
     </div>
   );
 }
