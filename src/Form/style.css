@@ -1,7 +1,13 @@
-.form {
+/* .form {
     background-color: hsla(180, 13%, 14%, 0.904);
     border-radius: 10px;
-}
+} */
+
+/* .form__fieldset {
+    border: 1px solid hsla(180, 13%, 14%, 0.904);
+    padding: 10px 20px;
+    border-radius: 5px;
+} */
 
 .form__labelText {
     display: inline-block;
@@ -59,8 +65,3 @@
     }
 }
 
-.form__fieldset {
-    border: 1px solid hsla(180, 13%, 14%, 0.904);
-    padding: 10px 20px;
-    border-radius: 5px;
-}

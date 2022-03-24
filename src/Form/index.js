@@ -1,15 +1,16 @@
 import "./style.css";
-import Datetime from "../Datetime/index.js"
+import Datetime from "../Datetime/index.js";
+import {StyledForm, Fieldset} from "./styled";
 
 const Form = ({ body }) => {
 
   return (
-    <form className="form">
-      <fieldset className="form__fieldset">
+    <StyledForm>
+      <Fieldset>
       <Datetime/>
         {body}
-      </fieldset>
-    </form>)
+      </Fieldset>
+    </StyledForm>)
 
 };
 
