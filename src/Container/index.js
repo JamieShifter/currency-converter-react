@@ -1,4 +1,3 @@
-import "./style.css";
 import { StyledContainer, LabelText, FormField, FormLabel } from "./styled";
 
 const Container = ({ currencies, title, input, amount, onAmountChange, result, inputCurrency, onInputCurrencyChange, outputCurrency, onOutputCurrencyChange, onResultChange }) => {

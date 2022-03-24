@@ -1,4 +1,3 @@
-import "./style.css";
 import { Clock } from "./styled";
 import { useState, useEffect } from "react";
 

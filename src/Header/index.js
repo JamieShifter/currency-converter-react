@@ -1,4 +1,3 @@
-import "./style.css";
 import { StyledHeader } from "./styled";
 
 const Header = ({ version }) => {

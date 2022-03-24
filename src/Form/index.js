@@ -1,4 +1,3 @@
-import "./style.css";
 import Datetime from "../Datetime/index.js";
 import {StyledForm, Fieldset} from "./styled";
 

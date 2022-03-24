@@ -1,4 +1,3 @@
-import "./style.css";
 import { FormReverse, ReverseButton } from "./styled";
 import { LabelText } from "../Container/styled";
 
