@@ -1,7 +1,8 @@
 import "./style.css";
+import { StyledHeader } from "./styled";
 
 const Header = ({ version }) => {
-    return(<header className="header">CC {version}</header>
+    return(<StyledHeader>CC {version}</StyledHeader>
     )
 };
     
