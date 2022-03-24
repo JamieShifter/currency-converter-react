@@ -1,10 +1,11 @@
 import "./style.css";
+import { Clock } from "./styled";
 import { useState, useEffect } from "react";
 
 const Datetime = () => {
 
-    const [currentDate, setCurrentDate] = useState(new Date()); 
-    let day = currentDate.toLocaleDateString("pl-PL", {weekday: "long", day: "numeric", month: "long", });
+    const [currentDate, setCurrentDate] = useState(new Date());
+    let day = currentDate.toLocaleDateString("pl-PL", { weekday: "long", day: "numeric", month: "long", });
     let time = currentDate.toLocaleTimeString();
 
     useEffect(() => {
@@ -18,9 +19,9 @@ const Datetime = () => {
     }, []);
 
     return (
-        <div className="form__datetime">
+        <Clock>
             Dzisiaj jest {day}, {time}
-        </div>
+        </Clock>
     )
 
 };
