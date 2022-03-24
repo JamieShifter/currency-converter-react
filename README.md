@@ -33,6 +33,14 @@ Currently the ratios for currencies are fixed, the long term goal however is to 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## TECH
+- JS(ES6)
+- HTML
+- CSS
+- React, hooks
+- Webpack
+- Styled Components
+
 ## Available Scripts
 
 In the project directory, you can run:
