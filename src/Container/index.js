@@ -1,5 +1,5 @@
 import "./style.css";
-import { StyledContainer } from "./styled";
+import { StyledContainer, LabelText, FormField, FormLabel } from "./styled";
 
 const Container = ({ currencies, title, input, amount, onAmountChange, result, inputCurrency, onInputCurrencyChange, outputCurrency, onOutputCurrencyChange, onResultChange }) => {
 
@@ -21,23 +21,22 @@ const Container = ({ currencies, title, input, amount, onAmountChange, result, i
 
     return (
         <StyledContainer>
-                <label className="form__label">
-                    <span className="form__labelText">{title}:</span>
-                    <select
+                <FormLabel>
+                    <LabelText>{title}:</LabelText>
+                    <FormField
                         value={input ? inputCurrency : outputCurrency}
                         onChange={input ? onInputCurrencyChange : onOutputCurrencyChange}
-                        className="form__field"
                         name="from">
                         {currencies.map(currency => (
                             <option key={currency.key} value={currency.display}>{currency.display.toUpperCase()}</option>
                         ))}
-                    </select>
-                </label>
-                <label className="form__label">
-                    <span className="form__labelText">{!input ? "Result " : ""}Amount:</span>
+                    </FormField>
+                </FormLabel>
+                <FormLabel>
+                    <LabelText>{!input ? "Result " : ""}Amount:</LabelText>
                     {input ?
-                        <input
-                            className="form__field"
+                        <FormField
+                            as="input"
                             required type="number"
                             name="fromAmount"
                             step="0.01"
@@ -47,9 +46,9 @@ const Container = ({ currencies, title, input, amount, onAmountChange, result, i
                             value={amount}
                             onChange={onAmountChange} />
                         :
-                        <span className="form__labelText form__labelText--result">{result}</span>
+                        <LabelText result>{result}</LabelText>
                     }
-                </label>
+                </FormLabel>
         </StyledContainer>
     );
 };

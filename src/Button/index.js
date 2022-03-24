@@ -1,9 +1,10 @@
 import "./style.css";
 import { FormReverse, ReverseButton } from "./styled";
+import { LabelText } from "../Container/styled";
 
 const Button = ({ reverseCurrency }) => (
     <FormReverse>
-        <label className="form__labelText form__labelText--reverse">Reverse:</label>
+        <LabelText reverse>Reverse:</LabelText>
         <ReverseButton type="button" value="♺" onClick={reverseCurrency} />
     </FormReverse>
 

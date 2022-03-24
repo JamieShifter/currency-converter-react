@@ -9,7 +9,7 @@
     border-radius: 5px;
 } */
 
-.form__labelText {
+/* .form__labelText {
     display: inline-block;
     width: 100%;
     max-width: 75px;
@@ -24,9 +24,9 @@
     font-size: 1.3em;
     font-weight: bold;
     color: rgb(163, 211, 163);
-}
+} */
 
-.form__field {
+/* .form__field {
     border: 1px solid rgb(99, 99, 99);
     margin: 5px;
     padding: 10px;
@@ -49,8 +49,8 @@
 .form__field:disabled {
     background-color: rgb(146, 146, 146);
     color: black;
-}
-
+} */
+/* 
 .form__label {
     display: flex;
     align-items: center;
@@ -63,5 +63,5 @@
         display: flex;
         flex-basis: 60px;
     }
-}
+} */
 
