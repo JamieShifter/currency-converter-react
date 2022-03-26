@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Clock = styled.div`
+export const StyledClock = styled.div`
     display: flex;
     justify-content: flex-end;
     color: rgb(185, 185, 185);

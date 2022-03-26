@@ -1,4 +1,4 @@
-import Datetime from "../Datetime/index.js";
+import Clock from "../Clock/index.js";
 import {StyledForm, Fieldset} from "./styled";
 
 const Form = ({ body }) => {
@@ -6,7 +6,7 @@ const Form = ({ body }) => {
   return (
     <StyledForm>
       <Fieldset>
-      <Datetime/>
+      <Clock/>
         {body}
       </Fieldset>
     </StyledForm>)
