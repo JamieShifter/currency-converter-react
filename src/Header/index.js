@@ -1,7 +1,7 @@
-import { StyledHeader } from "./styled";
+import { HeaderBar } from "./styled";
 
 const Header = ({ version }) => {
-    return(<StyledHeader>CC {version}</StyledHeader>
+    return(<HeaderBar>CC {version}</HeaderBar>
     )
 };
     

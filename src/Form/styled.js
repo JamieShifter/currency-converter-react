@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledForm = styled.form`
+export const MainForm = styled.form`
     background-color: hsla(180, 13%, 14%, 0.904);
     border-radius: 10px;
 `;

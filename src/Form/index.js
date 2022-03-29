@@ -1,15 +1,15 @@
 import Clock from "../Clock/index.js";
-import {StyledForm, Fieldset} from "./styled";
+import {MainForm, Fieldset} from "./styled";
 
 const Form = ({ body }) => {
 
   return (
-    <StyledForm>
+    <MainForm>
       <Fieldset>
       <Clock/>
         {body}
       </Fieldset>
-    </StyledForm>)
+    </MainForm>)
 
 };
 

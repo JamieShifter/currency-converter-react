@@ -1,4 +1,4 @@
-import { StyledContainer, LabelText, FormField, FormLabel } from "./styled";
+import { MainContainer, LabelText, FormField, FormLabel } from "./styled";
 
 const Container = ({ currencies, title, input, amount, onAmountChange, result, inputCurrency, onInputCurrencyChange, outputCurrency, onOutputCurrencyChange, onResultChange }) => {
 
@@ -19,7 +19,7 @@ const Container = ({ currencies, title, input, amount, onAmountChange, result, i
     
 
     return (
-        <StyledContainer>
+        <MainContainer>
                 <FormLabel>
                     <LabelText>{title}:</LabelText>
                     <FormField
@@ -45,10 +45,10 @@ const Container = ({ currencies, title, input, amount, onAmountChange, result, i
                             value={amount}
                             onChange={onAmountChange} />
                         :
-                        <LabelText result>{result}</LabelText>
+                        <LabelText styledResult>{result}</LabelText>
                     }
                 </FormLabel>
-        </StyledContainer>
+        </MainContainer>
     );
 };
 

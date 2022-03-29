@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const StyledContainer = styled.div`
+export const MainContainer = styled.div`
     display:flex;
     flex-direction: row;
 
@@ -19,7 +19,7 @@ export const LabelText = styled.span`
         margin: 10px 20px 10px 10px;
     `}
 
-    ${({ result }) => result && css`
+    ${({ styledResult }) => styledResult && css`
         max-width: 150px;
         font-size: 1.3em;
         font-weight: bold;

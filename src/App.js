@@ -2,7 +2,7 @@ import Form from "./Form";
 import Container from "./Container";
 import Button from "./Button";
 import Header from "./Header";
-import { StyledMain } from "./styled";
+import { MainWindow } from "./styled";
 import "./index.css";
 import { useState } from "react";
 
@@ -45,7 +45,7 @@ function App() {
   const onResultChange = () => { };
 
   const [result, setResult] = useState(0);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
   const onAmountChange = ({ target }) => {
     setAmount(target.value);
     setResult(renderResult(inputCurrency, outputCurrency, target.value));
@@ -66,7 +66,7 @@ function App() {
   return (
     <div>
       <Header version={1.4} />
-      <StyledMain>
+      <MainWindow>
         <Form
           body={
             <>
@@ -100,7 +100,7 @@ function App() {
               />
             </>
           } />
-      </StyledMain>
+      </MainWindow>
     </div>
   );
 }

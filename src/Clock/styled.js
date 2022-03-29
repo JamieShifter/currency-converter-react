@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledClock = styled.div`
+export const Datetime = styled.div`
     display: flex;
     justify-content: flex-end;
     color: rgb(185, 185, 185);
