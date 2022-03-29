@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useCurrentDate = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
-    let date = `${currentDate.toLocaleDateString("pl-PL", { weekday: "long", day: "numeric", month: "long", })}, ${currentDate.toLocaleTimeString()}`
+    
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -14,5 +14,5 @@ export const useCurrentDate = () => {
         }
     }, []);
 
-    return date
+    return currentDate;
 }
