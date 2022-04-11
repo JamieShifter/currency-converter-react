@@ -1,6 +1,6 @@
 # Welcome to Currency Converter 1.3!
 
-This little website lets you convert between various currencies. For now I limited the number of available currencies to **8** and guess what - Bitcoin is one of them!
+This little website lets you convert between various currencies.
 
 There's also a little clock feature at the top-right corner, to reflect what time it is;)
 
@@ -27,9 +27,9 @@ You can click the "Reverse" button to switch the currencies backwards:
 * Now USD is in first field and EUR is in second
 * RECALCULATION follows!
 
-## From where do I get the ratios
+## From where do I get the rates
 
-Currently the ratios for currencies are fixed, the long term goal however is to get them from a live site via API(probably).
+Currently the rates are fetched from 'https://api.exchangerate.host/latest?base=PLN' and then recalculated to any other currency on the go
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -37,9 +37,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - JS(ES6)
 - HTML
 - CSS
-- React, hooks
+- React, hooks(useState, useEffect)
 - Webpack
 - Styled Components
+- Promises(async/await)
 
 ## Available Scripts
 
