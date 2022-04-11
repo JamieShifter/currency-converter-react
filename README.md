@@ -1,10 +1,10 @@
-# Welcome to Currency Converter 1.3!
+# Welcome to Currency Converter 1.5!
 
 This little website lets you convert between various currencies.
 
 There's also a little clock feature at the top-right corner, to reflect what time it is;)
 
-Here's the link: [CC1.3](https://jamieshifter.github.io/currency-converter-react/)
+Here's the link: [CC1.5](https://jamieshifter.github.io/currency-converter-react/)
 
 ## How to use it?
 
