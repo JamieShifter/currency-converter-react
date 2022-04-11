@@ -2,17 +2,16 @@ import Form from "./Form";
 import Container from "./Container";
 import Button from "./Button";
 import Header from "./Header";
-import { MainWindow } from "./styled";
+import { MainWindow, Loading } from "./styled";
 import "./index.css";
 import { useState } from "react";
 import { useExchangeRates } from "./rates"
-import { devRates } from "./devRates"
 import loading from "./images/loading.gif"
+import error from "./images/error.png"
 
 
 function App() {
   const exchangeRate = useExchangeRates();
-  // const exchangeRate = devRates
 
   const reverseCurrency = () => {
     setResult(renderResult(outputCurrency, inputCurrency, amount));
@@ -60,18 +59,21 @@ function App() {
       <Header version={1.5} />
       {exchangeRate.state == "loading" ?
         (<>
-          <MainWindow> <h1>Przelicznik walut</h1>
-            Poczekaj chwilkę, ładuję dane z Europejskigo Banku Centralnego <br />
-            <img src={loading} alt='cirle' width='50' height='50' />
-          </MainWindow>
+          <Loading> 
+            <h1>Przelicznik walut</h1>
+            <p>Poczekaj chwilkę, ładuję dane z Europejskigo Banku Centralnego</p>
+            <p><img src={loading} alt='cirle' width='50' height='50' /></p>
+          </Loading>
         </>
         )
         :
         (exchangeRate.state === "error" ?
           (
-            <MainWindow> <h1>Przelicznik walut</h1>
-              Coś poszło nie tak, sprawdź stan połącznia z internetem<br />
-            </MainWindow>
+            <Loading> 
+              <h1>Przelicznik walut</h1>
+              <p>Coś poszło nie tak, sprawdź stan połącznia z internetem</p>
+              <p><img src={error} alt='circle' width='50' height='50'/></p>
+            </Loading>
           )
           :
 
