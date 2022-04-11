@@ -26,8 +26,8 @@ const Container = ({ currencies, title, input, amount, onAmountChange, result, i
                         value={input ? inputCurrency : outputCurrency}
                         onChange={input ? onInputCurrencyChange : onOutputCurrencyChange}
                         name="from">
-                        {currencies.map(currency => (
-                            <option key={currency.key} value={currency.display}>{currency.display.toUpperCase()}</option>
+                        {Object.entries(currencies).map(currency => (
+                            <option key={currency[0]} value={currency[0]}>{currency[0]}</option>
                         ))}
                     </FormField>
                 </FormLabel>
