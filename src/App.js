@@ -33,7 +33,7 @@ function App() {
 
   };
 
-  const onResultChange = () => { };
+  const onResultChange = () => {};
 
   const [result, setResult] = useState(0);
   const [amount, setAmount] = useState("");
@@ -57,9 +57,9 @@ function App() {
   return (
     <main>
       <Header version={1.5} />
-      {exchangeRate.state == "loading" ?
+      {exchangeRate.state === "loading" ?
         (<>
-          <Loading> 
+          <Loading>
             <h1>Przelicznik walut</h1>
             <p>Poczekaj chwilkę, ładuję dane z Europejskigo Banku Centralnego</p>
             <p><img src={loading} alt='cirle' width='50' height='50' /></p>
@@ -69,10 +69,10 @@ function App() {
         :
         (exchangeRate.state === "error" ?
           (
-            <Loading> 
+            <Loading>
               <h1>Przelicznik walut</h1>
               <p>Coś poszło nie tak, sprawdź stan połącznia z internetem</p>
-              <p><img src={error} alt='circle' width='50' height='50'/></p>
+              <p><img src={error} alt='circle' width='50' height='50' /></p>
             </Loading>
           )
           :
@@ -110,6 +110,7 @@ function App() {
                       outputCurrency={outputCurrency}
                       onOutputCurrencyChange={onOutputCurrencyChange}
                     />
+                    <p>Wyliczono na podstawie kursów z dnia {exchangeRate.date}</p>
                   </>
                 } />
             </MainWindow>
