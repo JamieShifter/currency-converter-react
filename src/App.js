@@ -18,6 +18,13 @@ function App() {
 
   const exchangeRate = useExchangeRates();
 
+  const renderResult = (inputCurrency, outputCurrency, amount) => {
+    let resultAmount = calculateResult(inputCurrency, outputCurrency, amount);
+    let resultFixed = (outputCurrency !== "btc" ? resultAmount.toFixed(2).toString() : resultAmount.toString());
+    let rendered = `${resultFixed} ${outputCurrency.toUpperCase()}`
+    return rendered;
+  };
+
   const reverseCurrency = () => {
     setResult(renderResult(outputCurrency, inputCurrency, amount));
     let reversedFromCurrency = outputCurrency;
@@ -30,27 +37,24 @@ function App() {
     return resultAmount;
   };
 
-  const renderResult = (inputCurrency, outputCurrency, amount) => {
-    let resultAmount = calculateResult(inputCurrency, outputCurrency, amount);
-    let resultFixed = (outputCurrency !== "btc" ? resultAmount.toFixed(2).toString() : resultAmount.toString());
-    let rendered = `${resultFixed} ${outputCurrency.toUpperCase()}`
-    return rendered;
-  };
-
   const onAmountChange = ({ target }) => {
     setAmount(target.value);
-    setResult(renderResult(inputCurrency, outputCurrency, target.value));
+    // setResult(renderResult(inputCurrency, outputCurrency, target.value));
   };
 
   const onInputCurrencyChange = ({ target }) => {
     setInputCurrency(target.value);
-    setResult(renderResult(target.value, outputCurrency, amount));
+    // setResult(renderResult(target.value, outputCurrency, amount));
   }
 
   const onOutputCurrencyChange = ({ target }) => {
     setOutputCurrency(target.value);
-    setResult(renderResult(inputCurrency, target.value, amount));
+    // setResult(renderResult(inputCurrency, target.value, amount));
   }
+
+  useEffect(() => {
+    setResult(renderResult(inputCurrency, outputCurrency, amount))
+  }, [amount, inputCurrency, outputCurrency])
 
   return (
     <main>
