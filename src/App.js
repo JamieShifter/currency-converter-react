@@ -4,13 +4,18 @@ import Button from "./Button";
 import Header from "./Header";
 import { MainWindow, Loading } from "./styled";
 import "./index.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useExchangeRates } from "./rates"
 import loading from "./images/loading.gif"
 import error from "./images/error.png"
 
 
 function App() {
+  const [result, setResult] = useState(0);
+  const [amount, setAmount] = useState("");
+  const [inputCurrency, setInputCurrency] = useState("PLN");
+  const [outputCurrency, setOutputCurrency] = useState("EUR");
+
   const exchangeRate = useExchangeRates();
 
   const reverseCurrency = () => {
@@ -20,35 +25,28 @@ function App() {
     setInputCurrency(reversedFromCurrency);
   };
 
-  const calculate = (inputCurrency, outputCurrency, amount) => {
+  const calculateResult = (inputCurrency, outputCurrency, amount) => {
     let resultAmount = amount * (exchangeRate.rates[outputCurrency] / exchangeRate.rates[inputCurrency]);
     return resultAmount;
   };
 
   const renderResult = (inputCurrency, outputCurrency, amount) => {
-    let resultAmount = calculate(inputCurrency, outputCurrency, amount);
+    let resultAmount = calculateResult(inputCurrency, outputCurrency, amount);
     let resultFixed = (outputCurrency !== "btc" ? resultAmount.toFixed(2).toString() : resultAmount.toString());
-    let rendered = resultFixed + " " + outputCurrency.toUpperCase();
+    let rendered = `${resultFixed} ${outputCurrency.toUpperCase()}`
     return rendered;
-
   };
 
-  const onResultChange = () => {};
-
-  const [result, setResult] = useState(0);
-  const [amount, setAmount] = useState("");
   const onAmountChange = ({ target }) => {
     setAmount(target.value);
     setResult(renderResult(inputCurrency, outputCurrency, target.value));
   };
 
-  const [inputCurrency, setInputCurrency] = useState("PLN");
   const onInputCurrencyChange = ({ target }) => {
     setInputCurrency(target.value);
     setResult(renderResult(target.value, outputCurrency, amount));
   }
 
-  const [outputCurrency, setOutputCurrency] = useState("EUR");
   const onOutputCurrencyChange = ({ target }) => {
     setOutputCurrency(target.value);
     setResult(renderResult(inputCurrency, target.value, amount));
@@ -89,7 +87,6 @@ function App() {
                       amount={amount}
                       onAmountChange={onAmountChange}
                       result={result}
-                      onResultChange={onResultChange}
                       inputCurrency={inputCurrency}
                       onInputCurrencyChange={onInputCurrencyChange}
                       outputCurrency={outputCurrency}
