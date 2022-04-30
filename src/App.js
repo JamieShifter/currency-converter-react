@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { useExchangeRates } from "./rates"
 import loading from "./images/loading.gif"
 import error from "./images/error.png"
+import { formatResult } from "./helperFunctions";
 
 
 function App() {
@@ -18,43 +19,28 @@ function App() {
 
   const exchangeRate = useExchangeRates();
 
-  const renderResult = (inputCurrency, outputCurrency, amount) => {
-    let resultAmount = calculateResult(inputCurrency, outputCurrency, amount);
-    let resultFixed = (outputCurrency !== "btc" ? resultAmount.toFixed(2).toString() : resultAmount.toString());
-    let rendered = `${resultFixed} ${outputCurrency.toUpperCase()}`
-    return rendered;
-  };
-
   const reverseCurrency = () => {
-    setResult(renderResult(outputCurrency, inputCurrency, amount));
+    setResult(formatResult(outputCurrency, inputCurrency, amount));
     let reversedFromCurrency = outputCurrency;
     setOutputCurrency(inputCurrency);
     setInputCurrency(reversedFromCurrency);
   };
 
-  const calculateResult = (inputCurrency, outputCurrency, amount) => {
-    let resultAmount = amount * (exchangeRate.rates[outputCurrency] / exchangeRate.rates[inputCurrency]);
-    return resultAmount;
-  };
-
   const onAmountChange = ({ target }) => {
     setAmount(target.value);
-    // setResult(renderResult(inputCurrency, outputCurrency, target.value));
   };
 
   const onInputCurrencyChange = ({ target }) => {
     setInputCurrency(target.value);
-    // setResult(renderResult(target.value, outputCurrency, amount));
   }
 
   const onOutputCurrencyChange = ({ target }) => {
     setOutputCurrency(target.value);
-    // setResult(renderResult(inputCurrency, target.value, amount));
   }
 
   useEffect(() => {
-    setResult(renderResult(inputCurrency, outputCurrency, amount))
-  }, [amount, inputCurrency, outputCurrency])
+    setResult(formatResult(inputCurrency, outputCurrency, amount, exchangeRate))
+  }, [amount, inputCurrency, outputCurrency, exchangeRate])
 
   return (
     <main>
